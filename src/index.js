@@ -4,7 +4,7 @@ import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import App from './App';
-import { Header } from './components/index';
+import { Header, DetailsPage } from './components/index';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,6 +13,7 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/restaurant-details" element={<DetailsPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
