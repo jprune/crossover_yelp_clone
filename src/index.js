@@ -5,8 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import App from './App';
 import { Header } from './components/index';
-import { Login, DetailsPage } from './pages';
 import YelpContextProvider from './Context';
+import { DetailsPage, Login } from './pages/index';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

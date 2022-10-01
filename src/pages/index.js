@@ -1,4 +1,4 @@
 import Login from './Login';
-import DetailsPage from './DetailsPage1';
+import DetailsPage from './DetailsPage';
 
 export { Login, DetailsPage };
