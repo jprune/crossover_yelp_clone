@@ -6,7 +6,7 @@ import App from './App';
 
 import { Header, Footer } from './components/index';
 import YelpContextProvider from './Context';
-import { DetailsPage, Login } from './pages/index';
+import { DetailsPage, Login, Results } from './pages/index';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +19,7 @@ root.render(
           <Route path="/" element={<App />} />
           <Route path="/login" element={<Login />} />
           <Route path="/details/:id" element={<DetailsPage />} />
+          <Route path="/results/:searchText" element={<Results />} />
         </Routes>
         <Footer />
       </BrowserRouter>

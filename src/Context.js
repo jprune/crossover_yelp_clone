@@ -70,10 +70,10 @@ export default function Context({ children }) { // 2. create a function
     const getRestaurantList = async () => {
       try {
         const response = await axios.get('https://mini-yelp-clone-backend.herokuapp.com/restaurants');
-        console.log(response);
+        // console.log(response);
         setRestaurantList(response.data);
       } catch (error) {
-        console.error(error);
+        // console.error(error);
       }
     };
     getRestaurantList();

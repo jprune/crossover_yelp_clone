@@ -4,6 +4,8 @@ import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import useSwr from 'swr';
 import { useContext } from 'react';
 import { YelpContext } from '../Context';
+import { useParams } from "react-router-dom"
+import { useState, useEffect } from 'react';
 
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
@@ -14,16 +16,17 @@ const DefaultIcon = L.icon({
 });
 L.Marker.prototype.options.icon = DefaultIcon;
 
-const fetcher = (...args) => fetch(...args).then(response => response.json());
+// const fetcher = (...args) => fetch(...args).then(response => response.json());
 
-export default function OurMap() {
-  const url =
-    "https://mini-yelp-clone-backend.herokuapp.com/restaurants/6337fce518dc251c2a411b09";
-  // const { data, error } = useSwr(url, { fetcher });
+export default function OurMap({snack}) {
 
-  // // using this data to see what comes up on the map or just show an empty map - Maybe a pop up?
-  // const restaurants = data && !error ? data.slice(0, 10) : [];
-    const {restaurantList} = useContext(YelpContext)
+  // const url =
+  //   "https://mini-yelp-clone-backend.herokuapp.com/restaurants/6337fce518dc251c2a411b09";
+  // // const { data, error } = useSwr(url, { fetcher });
+
+  // // // using this data to see what comes up on the map or just show an empty map - Maybe a pop up?
+  // // const restaurants = data && !error ? data.slice(0, 10) : [];
+  //   const {restaurantList} = useContext(YelpContext)
   return (
     <MapContainer center={[48.34726063741718, 10.871004041208831]} zoom={13} scrollWheelZoom={false}>
       <TileLayer
@@ -32,14 +35,7 @@ export default function OurMap() {
                 
       />
 
-      {restaurantList.map(restaurants => <Marker key={restaurants._id} position={[restaurants.latitude, restaurants.longitude]}/>)}
-      {/* {restaurants.map()} */}
-        {/* <Marker 
-        key={restaurants} position={[
-        restaurants?.latitude,
-        restaurants?.longetude
-      ]}
-      /> */}
+      <Marker position={[48.34726063741718, 10.871004041208831]}/>
     </MapContainer>
   );
 }

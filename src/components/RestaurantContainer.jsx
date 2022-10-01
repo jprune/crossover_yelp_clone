@@ -10,7 +10,7 @@ const RestaurantContainer = () => {
   return (
     <div className="mt-10 w-full bg-gray-200 rounded-md mx-2 flex flex-wrap justify-center">
       {restaurantList.map((restaurant, idx) => (
-        <Link to={`/details/${restaurant._id}`}>
+        <Link to={`/details/${restaurant.id}`}>
           <RestaurantList restaurant={restaurant} key={idx} />
         </Link>
       ))}
