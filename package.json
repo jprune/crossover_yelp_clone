@@ -25,7 +25,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+<<<<<<< HEAD
  
+=======
+>>>>>>> 81b20a97342b74587159328ed22920ec35b53950
   "browserslist": {
     "production": [
       ">0.2%",
