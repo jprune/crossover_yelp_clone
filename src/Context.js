@@ -66,18 +66,18 @@ export default function Context({ children }) { // 2. create a function
   })
   const [tags, setTags] = useState(['Fast Food', 'Vegan', 'Drinks', 'Romantic', 'Extravagant']);
   const [categories, setCategories] = useState(['Italian', 'Asian', 'French', 'Mexican', 'Chinese']);
-  //   useEffect(() => {
-  //     const getRestaurantList = async () => {
-  //       try {
-  //         const response = await axios.get('https://mini-yelp-clone-backend.herokuapp.com/restaurants');
-  //         // console.log(response);
-  //         setRestaurantList(response);
-  //       } catch (error) {
-  //         console.error(error);
-  //       }
-  //     };
-  //     getRestaurantList();
-  //   }, []);
+  useEffect(() => {
+    const getRestaurantList = async () => {
+      try {
+        const response = await axios.get('https://mini-yelp-clone-backend.herokuapp.com/restaurants');
+        console.log(response);
+        setRestaurantList(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    getRestaurantList();
+  }, []);
 
   return (
     <YelpContext.Provider value={{ restaurantList, setRestaurantList, tags, setTags, categories, setCategories,restaurantDetail, setRestaurantDetail  }}>

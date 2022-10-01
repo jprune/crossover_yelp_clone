@@ -5,9 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import App from './App';
 import { Header } from './components/index';
-import { Login } from './Pages';
 import YelpContextProvider from './Context';
-import { DetailsPage } from './components/index';
+import { DetailsPage, Login } from './pages/index';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,7 +17,7 @@ root.render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/restaurant-details" element={<DetailsPage />} />
+          <Route path="/details/:id" element={<DetailsPage />} />
         </Routes>
       </BrowserRouter>
     </YelpContextProvider>
