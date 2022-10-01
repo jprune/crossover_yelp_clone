@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import App from './App';
 import { Header } from './components/index';
-import { Login } from './pages';
+import { Login, DetailsPage } from './pages';
 import YelpContextProvider from './Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,6 +17,7 @@ root.render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/details/:id" element={<DetailsPage />} />
         </Routes>
       </BrowserRouter>
     </YelpContextProvider>
