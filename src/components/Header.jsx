@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaYelp, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const Header = () => (
@@ -13,7 +14,7 @@ const Header = () => (
         <FaInstagram className="w-6 h-6" />
         <FaTwitter className="w-6 h-6" />
       </div>
-      <button type="button" className="rounded-lg bg-red-600 px-4 py-2 shadow-lg">Login</button>
+      <Link to="/login"><button type="button" className="rounded-lg bg-red-600 px-4 py-2 shadow-lg">Login</button></Link>
     </div>
   </nav>
 );

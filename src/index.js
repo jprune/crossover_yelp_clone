@@ -5,15 +5,20 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import App from './App';
 import { Header } from './components/index';
+import { Login } from './pages';
+import YelpContextProvider from './Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<App />} />
-      </Routes>
-    </BrowserRouter>
+    <YelpContextProvider>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
+    </YelpContextProvider>
   </React.StrictMode>,
 );
