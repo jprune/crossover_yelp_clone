@@ -45,6 +45,25 @@ export default function Context({ children }) { // 2. create a function
       __v: 0,
     },
   ]);
+  const [restaurantDetail, setRestaurantDetail] = useState(    {
+    _id: '6337fce518dc251c2a411b09',
+    name: 'Burger King Augsburg',
+    image: 'https://images.unsplash.com/photo-1626229652216-e5bb7f511917?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80',
+    website: 'https://www.burgerking.de',
+    city: 'Augsburg',
+    street: 'Gabelsbergerstraße',
+    streetnumber: 7,
+    phonenumber: '0821 99880055',
+    latitude: '48.34726063741718',
+    longitude: '10.871004041208831',
+    rating: 2,
+    tags: [
+      'Fast Food',
+      'Vegan',
+      'Drinks',
+    ],
+    __v: 0,
+  })
   const [tags, setTags] = useState(['Fast Food', 'Vegan', 'Drinks', 'Romantic', 'Extravagant']);
   const [categories, setCategories] = useState(['Italian', 'Asian', 'French', 'Mexican', 'Chinese']);
   //   useEffect(() => {
@@ -61,7 +80,7 @@ export default function Context({ children }) { // 2. create a function
   //   }, []);
 
   return (
-    <YelpContext.Provider value={{ restaurantList, setRestaurantList, tags, setTags, categories, setCategories }}>
+    <YelpContext.Provider value={{ restaurantList, setRestaurantList, tags, setTags, categories, setCategories,restaurantDetail, setRestaurantDetail  }}>
       {children}
     </YelpContext.Provider>
   );
