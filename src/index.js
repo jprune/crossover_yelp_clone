@@ -4,17 +4,23 @@ import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import App from './App';
-import { Header, DetailsPage } from './components/index';
+import { Header } from './components/index';
+import { Login } from './Pages';
+import YelpContextProvider from './Context';
+import { DetailsPage } from './components/index';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/restaurant-details" element={<DetailsPage />} />
-      </Routes>
-    </BrowserRouter>
+    <YelpContextProvider>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/restaurant-details" element={<DetailsPage />} />
+        </Routes>
+      </BrowserRouter>
+    </YelpContextProvider>
   </React.StrictMode>,
 );
