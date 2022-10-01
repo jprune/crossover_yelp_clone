@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { YelpContext } from '../Context';
+import React from 'react';
 import Tile from './Tile';
 
 const TileContainer = ({ tileContent, title }) => (

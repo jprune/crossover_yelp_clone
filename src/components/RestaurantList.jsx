@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RestaurantList = () => (
-  <div>RestaurantList</div>
+  <div>Hi</div>
 );
 
 export default RestaurantList;
