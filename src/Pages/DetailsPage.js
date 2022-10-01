@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from 'react'
 import RestaurantDetails from './RestaurantDetails.css'
 import {useParams} from "react-router-dom";
 import { YelpContext } from '../Context';
-import Tile from '../components/Tile';
+import { OurMap } from "../components/index"
 
 const DetailsPage = ({ tileContent }) => {
   const {restaurantDetail} = useContext(YelpContext)
@@ -43,7 +43,9 @@ const DetailsPage = ({ tileContent }) => {
                     <p>{restaurantDetail.street} {restaurantDetail.streetnumber}<br />{restaurantDetail.city}</p>
                     <p>Phone: {restaurantDetail.phonenumber}</p>
                 </div>
-                <div className="map"></div>
+                <div className="map">
+                    <OurMap />
+                </div>
             </section>
             <section>
                 <h2>Opening hours</h2>

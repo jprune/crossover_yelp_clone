@@ -4,7 +4,7 @@ import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 
-import { Header, Footer, OurMap } from './components/index';
+import { Header, Footer } from './components/index';
 import YelpContextProvider from './Context';
 import { DetailsPage, Login } from './pages/index';
 
@@ -15,7 +15,6 @@ root.render(
     <YelpContextProvider>
       <BrowserRouter>
         <Header />
-        <OurMap />
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/login" element={<Login />} />
